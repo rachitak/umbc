@@ -13,4 +13,5 @@ public interface ItemDataDao {
 	
 	//update method
 	ItemEntity updateItemById(ItemEntity itemEntity);
+	ItemEntity insertItemById(ItemEntity itemEntity);
 }

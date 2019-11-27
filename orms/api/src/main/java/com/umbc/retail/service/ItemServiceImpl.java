@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.umbc.retail.dao.ItemDataDao;
+import com.umbc.retail.entity.CustomerEntity;
 import com.umbc.retail.entity.ItemEntity;
 
 @Service
@@ -55,6 +56,17 @@ public class ItemServiceImpl implements ItemService {
 	public ItemEntity updateItemById(Integer itemID, ItemEntity itemEntity) {
 		return itemDataDao.updateItemById(itemEntity);
 	}
-
+	
+	//to update Customer
+	@Override
+	public ItemEntity insertItemById(ItemEntity itemEntity) throws Exception  {
+		ItemEntity res = new ItemEntity(); 
+			try {
+				res  = itemDataDao.insertItemById(itemEntity);
+			}catch(Exception e) {
+				throw new Exception(e.getMessage());
+			}
+			return res;
+		}
 
 }

@@ -10,6 +10,6 @@ public interface DepartmentService {
 	
 	//to update departments
 	DepartmentEntity updateDepartmentById(Integer departmentId,DepartmentEntity departmentEntity) throws Exception ;
-	DepartmentEntity insertDepartmentById(Integer departmentId,DepartmentEntity departmentEntity) throws Exception ;
+	DepartmentEntity insertDepartmentById(DepartmentEntity departmentEntity) throws Exception ;
 	
 }

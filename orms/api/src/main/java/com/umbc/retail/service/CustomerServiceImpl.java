@@ -37,4 +37,28 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 		return custRecList ;
 	}
+	
+	//to update Customer
+		@Override
+		public CustomerEntity updateCustomerById(Integer customerId,CustomerEntity customerEntity) throws Exception  {
+			CustomerEntity custEntity = new CustomerEntity();
+			try {
+				custEntity  = customerDataDao.updateCustomerById(customerEntity);
+			}catch(Exception e) {
+				throw new Exception(e.getMessage());
+			}
+			return custEntity;
+		}
+		
+		//to update Customer
+		@Override
+		public CustomerEntity insertCustomerById(CustomerEntity customerEntity) throws Exception  {
+			CustomerEntity custEntity = new CustomerEntity();
+				try {
+					custEntity  = customerDataDao.insertCustomerById(customerEntity);
+				}catch(Exception e) {
+					throw new Exception(e.getMessage());
+				}
+				return custEntity;
+			}
 }

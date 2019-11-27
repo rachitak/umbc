@@ -8,5 +8,7 @@ public interface ItemService {
 	List<ItemEntity> getItemsByDepartmentId (Integer departmentID) throws Exception;
 	List<ItemEntity> getItems() throws Exception;
 	
-	ItemEntity updateItemById(Integer itemID, ItemEntity itemEntity);
+	ItemEntity updateItemById(Integer itemID, ItemEntity itemEntity) throws Exception;
+	ItemEntity insertItemById(ItemEntity itemEntity) throws Exception; 
+
 }

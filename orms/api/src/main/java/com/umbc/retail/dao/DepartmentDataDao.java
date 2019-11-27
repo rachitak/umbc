@@ -12,7 +12,6 @@ public interface DepartmentDataDao {
 	List<DepartmentEntity> getDepartments();
 	
 	DepartmentEntity updateDepartmentById(DepartmentEntity departmentEntity);
-	
 	DepartmentEntity insertDepartmentById(DepartmentEntity departmentEntity);
 	
 }

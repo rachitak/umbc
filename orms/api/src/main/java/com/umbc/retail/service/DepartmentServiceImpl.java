@@ -52,13 +52,13 @@ public class DepartmentServiceImpl implements DepartmentService {
 	
 	//to update departments
 	@Override
-	public DepartmentEntity insertDepartmentById(Integer departmentId,DepartmentEntity departmentEntity) throws Exception  {
-			DepartmentEntity deptEntity = new DepartmentEntity();
+	public DepartmentEntity insertDepartmentById(DepartmentEntity departmentEntity) throws Exception  {
+			DepartmentEntity res = new DepartmentEntity();
 			try {
-				deptEntity  = departmentDataDao.insertDepartmentById(departmentEntity);
+				res  = departmentDataDao.insertDepartmentById(departmentEntity);
 			}catch(Exception e) {
 				throw new Exception(e.getMessage());
 			}
-			return deptEntity;
+			return res;
 		}
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.umbc.retail.dao.StoreDataDao;
+import com.umbc.retail.entity.CustomerEntity;
 import com.umbc.retail.entity.StoreEntity;
 
 @Service
@@ -22,4 +23,17 @@ public class StoreServiceImpl implements StoreService {
 		}
 		return storeRec;
 	}
+	
+	
+	//to update Customer
+	@Override
+	public StoreEntity insertStoreById(StoreEntity storeEntity) throws Exception  {
+		StoreEntity SEntity = new StoreEntity();
+			try {
+				SEntity  = storeDataDao.insertStoreById(storeEntity);
+			}catch(Exception e) {
+				throw new Exception(e.getMessage());
+			}
+			return SEntity;
+		}
 }

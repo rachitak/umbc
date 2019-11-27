@@ -10,4 +10,7 @@ public interface CustomerDataDao {
 
 	Optional<CustomerEntity> getCustomerById (Integer custID);
 	List<CustomerEntity> getCustomers();
+
+	CustomerEntity updateCustomerById(CustomerEntity customerEntity);
+	CustomerEntity insertCustomerById(CustomerEntity customerEntity);
 }

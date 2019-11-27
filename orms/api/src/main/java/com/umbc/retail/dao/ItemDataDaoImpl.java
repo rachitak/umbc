@@ -34,5 +34,10 @@ public class ItemDataDaoImpl implements ItemDataDao {
 	public ItemEntity updateItemById(ItemEntity itemEntity) {
 		return itemRep.save(itemEntity);
 	}
+	
+	@Override
+	public ItemEntity insertItemById(ItemEntity itemEntity) {
+		return itemRep.save(itemEntity);
+	}
 
 }
