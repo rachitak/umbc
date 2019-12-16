@@ -1,5 +1,7 @@
 package com.umbc.retail.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -13,11 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.umbc.retail.entity.CustomerEntity;
 import com.umbc.retail.entity.DepartmentEntity;
+import com.umbc.retail.entity.InvoiceDetail;
+import com.umbc.retail.entity.InvoiceDetailEntity;
+import com.umbc.retail.entity.InvoiceMasterEntity;
 import com.umbc.retail.entity.ItemEntity;
 import com.umbc.retail.entity.StoreEntity;
 import com.umbc.retail.service.CustomerService;
 import com.umbc.retail.service.DepartmentService;
 import com.umbc.retail.service.EmployeeService;
+import com.umbc.retail.service.InvoiceDetailService;
+import com.umbc.retail.service.InvoiceMasterService;
 import com.umbc.retail.service.ItemService;
 import com.umbc.retail.service.StoreService;
 import com.umbc.retail.service.TaxRateService;
@@ -47,8 +54,11 @@ public class RetailInsertController {
 	@Autowired
 	ItemService itemService;
 	
+	@Autowired
+	InvoiceMasterService invService;
 	
-	
+	@Autowired
+	InvoiceDetailService invDetailService;
 	
 	
 	/*
@@ -95,4 +105,36 @@ public class RetailInsertController {
         return new ResponseEntity<StoreEntity> (storeService.insertStoreById(request),HttpStatus.OK);
 		
     }
+	
+	
+	
+	/*
+	 * API for store table
+	 */
+	@RequestMapping(value = "/invoice",method = RequestMethod.POST,produces =  MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<InvoiceMasterEntity> insertInvoiceMasterById(
+			@RequestBody InvoiceMasterEntity request ) throws Exception{
+		
+        return new ResponseEntity<InvoiceMasterEntity> (invService.insertInvoiceMasterById(request),HttpStatus.OK);
+		
+    }
+	
+	
+	
+	/*
+	 * API for store table
+	 */
+	@RequestMapping(value = "/invoicedetail",method = RequestMethod.POST,produces =  MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<InvoiceDetailEntity>> insertInvoiceDetailById(
+			@RequestBody List<InvoiceDetail> request ) throws Exception{
+		
+        return new ResponseEntity<List<InvoiceDetailEntity>> (invDetailService.insertInvoiceDetailById(request),HttpStatus.OK);
+		
+    }
+	
+	
+	
+	
+	
+	
 }

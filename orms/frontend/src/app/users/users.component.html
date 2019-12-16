@@ -1,0 +1,45 @@
+
+<div class="signup-form">
+        <h1 class=" text-white text-center" style="background-color: lightgrey;" >  Online Retail Management System</h1>
+
+        <form #postForm="ngForm" (ngSubmit)="reginsterUser(postForm.value)">
+            <h2>Register</h2>            
+            <div class="form-group">
+                <div class="row">
+                        <div class="col-xs-6">
+                                <input type="text"  class="form-control" id="firstName"  maxlength="50" placeholder="First Name" ngModel name="firstName" required="required">
+                         </div>
+                        <div class="col-xs-6">
+                            <input type="text"  class="form-control" id="lastname" maxlength="50" placeholder="Last Name" required="required" ngModel name="lastName">
+                        </div>
+                </div>        	
+            </div>
+            
+            <div class="form-group">
+                <input type="text" class="form-control" name="address1" maxlength="50" placeholder="Address 1" ngModel name="address1">
+            </div>
+            <div class="form-group">
+                    <input type="text" class="form-control" name="address2" maxlength="50" placeholder="Address 2" ngModel name="address2">
+                </div>
+                <div class="form-group">
+                <div class="row">
+                        <div class="col-xs-6"><input type="text" class="form-control" maxlength="20" name="city" placeholder="City" ngModel name="city"></div>
+                        <div class="col-xs-3"><input type="text" class="form-control" name="state" placeholder="State" maxlength="2" ngModel name="state"  ng-pattern = "[A-Z]*" ></div>
+                        <div class="col-xs-3"><input type="text" class="form-control" maxlength="5" name="zip" placeholder="Zip" pattern="[0-9]+"  ngModel name="zip"></div>
+                    </div>   
+                </div>
+                <div class="form-group">
+                        <input type="text" class="form-control" name="phone" maxlength="10" placeholder="Phone Number" ngModel name="phone">
+                    </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" maxlength="100"  required="required"ngModel name="email">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password" maxlength="10" required="required"ngModel name="password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+            </div>
+        </form>
+       
+    </div>

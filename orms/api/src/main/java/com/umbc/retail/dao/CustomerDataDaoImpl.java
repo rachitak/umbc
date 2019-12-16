@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.umbc.retail.entity.CustomerEntity;
 import com.umbc.retail.entity.DepartmentEntity;
 import com.umbc.retail.repository.CustomerRepository;
+import com.umbc.retail.repository.CustomerRepository.CustInfo;
 
 @Service
 public class CustomerDataDaoImpl implements CustomerDataDao {
@@ -39,4 +40,9 @@ public class CustomerDataDaoImpl implements CustomerDataDao {
 		return custRep.save(customerEntity);
 	}
 
+	@Override
+	public List<CustInfo> getCustomerInfo(){
+		return custRep.getCustomerInfo();
+	}
+	
 }

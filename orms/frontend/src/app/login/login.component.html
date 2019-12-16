@@ -1,0 +1,40 @@
+<div class="container">
+        <div class="login-form" >
+                <h1 class=" text-white text-center" style="background-color: lightgrey;"> Online Retail Management System</h1>
+            
+            <form  >
+                <h2 class="text-center" > Log In</h2>
+                <div class="form-group">
+                    <input [(ngModel)]="email" type="text" class="form-control" id="email" placeholder="Email" required="required" ngModel name="email">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="password" type="password" class="form-control" id="password" placeholder="Password" required="required" ngModel name="password">
+                </div>
+                <div class="form-group">
+                    <button type="submit" (click)="validateUser()" class="btn btn-primary btn-block">Log In</button>
+                    <!--<a href="#" [routerLink]="['/invoice']"><button class="btn btn-primary btn-block">Log In</button></a>-->
+                </div>
+                <!--
+                <div class="form-group">
+                    <button type="submit" (click)='validateUser()' class="btn btn-primary btn-block">get my auditors</button>
+                    
+                </div>
+                -->
+                <!--<a href="#" [routerLink]="['/invoice']"><button class="btn btn-primary btn-block">Log In</button></a>-->
+                <!--
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let post of loadedPosts">
+                        <h1>{{post.auditorId}}</h1>
+                        <p>{{post.auditorNames}}</p>
+                    </li>
+                </ul>
+                -->
+            </form>
+            <a href="#" [routerLink]="['/users']">
+                <button class="btn btn-primary">Create Account</button>
+            </a>
+    
+    
+    
+        </div>
+    </div>

@@ -1,0 +1,47 @@
+<h1 class=" text-white text-center" style="background-color: lightgrey;"> Online Retail Management System</h1>
+
+<h3>Welcome : {{custInfo[0].firstName}} , {{custInfo[0].lastName}} </h3>
+
+<form name="myForm" >
+    <div class="col-md-6" class="extend-size">
+        <table class="table table-striped" >
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col" width="500">Name</th>
+                    <th scope="col" >price</th>
+                    <th scope="col" width="100">Qty</th>
+                    <th scope="col" width="100">Total Amount</th>
+                    <th scope="col" width="100">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of shoppingCart; let itemID = index">
+                    <td>
+                        <span width="100">{{item.itemID}}</span>
+                    </td>
+                    <td>
+                        <span size="300">{{item.itemName}}</span>
+                    </td>
+                    <td>
+                        <span>{{item.price}}</span>
+                    </td>
+                    <td>
+                        <span>{{item.quantity}}</span>
+                    </td>
+                    <td>
+                            <span>{{item.totalAmount}}</span>
+                    </td>
+                    <td>
+                        <button type="button" (click)=removeItem(item.itemID) mdbBtn color="danger" rounded="true" size="sm" class="my-0" >Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
+
+<button type="button" (click)=checkout() mdbBtn color="danger" rounded="true" size="sm" class="my-0" >CheckOut</button>
+
+
+

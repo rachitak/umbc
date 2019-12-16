@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.umbc.retail.dao.CustomerDataDao;
 import com.umbc.retail.entity.CustomerEntity;
+import com.umbc.retail.repository.CustomerRepository.CustInfo;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -61,4 +62,21 @@ public class CustomerServiceImpl implements CustomerService {
 				}
 				return custEntity;
 			}
+		
+		//native query
+		@Override
+		public List<CustInfo> getCustomerInfo() throws Exception{
+			
+			List<CustInfo>  custInfo = new ArrayList<CustInfo>() ;
+			try {
+				custInfo  = customerDataDao.getCustomerInfo();
+			}catch(Exception e) {
+				throw new Exception(e.getMessage());
+			}
+			
+			
+			
+			return custInfo;
+			
+		}
 }

@@ -23,4 +23,17 @@ public class InvoiceMasterServiceImpl implements InvoiceMasterService {
 		return invoiceMasterRec;
 	}
 
+	@Override
+	public InvoiceMasterEntity insertInvoiceMasterById(InvoiceMasterEntity invEntity) throws Exception {
+		InvoiceMasterEntity invoiceMasterRec = new InvoiceMasterEntity();
+		try {
+			invoiceMasterRec  = invoiceMasterDataDao.insertInvoiceMasterById(invEntity);
+		}catch(Exception e) {
+			throw new Exception(e.getMessage());
+		}
+		return invoiceMasterRec;
+	}
+	
+	
+	
 }

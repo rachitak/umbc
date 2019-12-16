@@ -1,0 +1,67 @@
+<h1 class=" text-white text-center" style="background-color: lightgrey;"> Online Retail Management System</h1>
+
+<button class="btn-primary pull-right" type="button" (click)="displayCart()" >Shopping Cart : {{totalItems}}</button>
+<h3>Welcome : {{custInfo[0].firstName}} , {{custInfo[0].lastName}} </h3>
+
+<form name="myForm">
+  <div class="row">
+    <div class="col-md-3">
+      <h3 >Select Department</h3>
+      <ul  class="list-group" >
+        <a  style="background-color: lightgrey;" ng-href="#" [ngClass]="{'active': selectedItem == dept}" (click)="mydata($event,dept)" class="list-group-item" *ngFor="let dept of allDepartments" >
+          {{dept.departmentName}}
+        </a>
+
+      </ul>
+    </div>
+    <div class="col-md-6">
+
+      <table class="table table-striped">
+        <thead >
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col" width="500">Name</th>
+            <th scope="col" width="100">Price</th>   
+            <th scope="col" width="100">Add</th>            
+          </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of listLitems; let id = index">
+            <td>
+              <span width="100">{{item.itemID}}</span>
+            </td>
+            <td>
+              <span size ="300" >{{item.itemName}}</span>
+            </td>
+            <td>
+              <span>{{item.price}}</span>
+            </td>
+            <!--
+            <td> 
+              <span contenteditable="true" (keyup)="changeValue(id, 'quantity', $event)" (blur)="updateList(id, 'quantity', $event)">{{item.quantity}}</span>
+            </td>
+            
+            <td>
+              <span  (keyup)="changeValue(id, 'desciption', $event)" (blur)="updateList(id, 'desciption', $event)">{{item.desciption}}</span>
+            </td>
+            -->
+            <td>
+            <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="addtoCard(item.itemID,item.itemName ,item.price)">Add</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</form>
+
+
+
+
+<!--<li class="list-group-item" *ngFor="let dept of depts">
+                  {{dept.departmentName}}
+              </li>
+            -->

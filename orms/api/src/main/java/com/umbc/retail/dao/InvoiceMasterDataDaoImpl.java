@@ -18,4 +18,9 @@ public class InvoiceMasterDataDaoImpl implements InvoiceMasterDataDao {
 		return invoiceMasterRep.findById(invoiceID);
 	}
 
+	@Override
+	public InvoiceMasterEntity insertInvoiceMasterById(InvoiceMasterEntity invEntity) {
+		return invoiceMasterRep.save(invEntity);
+	}
+	
 }

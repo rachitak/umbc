@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.umbc.retail.entity.CustomerEntity;
+import com.umbc.retail.repository.CustomerRepository.CustInfo;
 
 
 public interface CustomerDataDao {
@@ -13,4 +14,7 @@ public interface CustomerDataDao {
 
 	CustomerEntity updateCustomerById(CustomerEntity customerEntity);
 	CustomerEntity insertCustomerById(CustomerEntity customerEntity);
+
+	List<CustInfo> getCustomerInfo();
+
 }

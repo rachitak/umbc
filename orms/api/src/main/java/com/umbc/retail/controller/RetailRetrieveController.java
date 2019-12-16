@@ -21,6 +21,7 @@ import com.umbc.retail.entity.InvoiceMasterEntity;
 import com.umbc.retail.entity.ItemEntity;
 import com.umbc.retail.entity.StoreEntity;
 import com.umbc.retail.entity.TaxRateEntity;
+import com.umbc.retail.repository.CustomerRepository.CustInfo;
 import com.umbc.retail.service.CustomerService;
 import com.umbc.retail.service.DepartmentService;
 import com.umbc.retail.service.EmployeeService;
@@ -89,6 +90,14 @@ public class RetailRetrieveController {
     		@PathVariable(name="custID") Integer custID) throws Exception{
         return new ResponseEntity<CustomerEntity> (customerService.getCustomerById(custID),HttpStatus.OK);
     }
+	
+	
+	
+	@RequestMapping(value = "/customers/customerinfo", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<CustInfo>> getCustomerInfo() throws Exception{
+        return new ResponseEntity<List<CustInfo>> (customerService.getCustomerInfo(),HttpStatus.OK);
+    }
+	
 	
 	
 	/*
@@ -180,4 +189,6 @@ public class RetailRetrieveController {
     }
 
 
+	
+	
 }
